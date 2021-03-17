@@ -7,3 +7,4 @@ app = Flask(__name__)
 
 #importing the views file to avoid a circular import
 from app import views
+from app import admin_views

@@ -3,7 +3,7 @@ from flask import Flask, request, render_template
 
 #creatre a root... a decorator in parentheseis we put url we want to fire
 #write a funcution underneath it and tell it to do something
-# environment variables: run flask app... declare: $export FLASK_APP=app.py
+# environment variables: run flask app... declare: $export FLASK_APP=run.py
 # $export FLASK_ENV=development
 #$flask run
 @app.route("/")
