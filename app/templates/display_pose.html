@@ -1,0 +1,27 @@
+{% extends "/base.html" %}
+
+{% block title%} Display my pose {% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="row">
+    <div class="card bg-light text-dark border-0">
+        <img src="./static/img/lotus_swamp.jpeg" class="card-img" alt="Lotus swamp">
+        <div class="card-img-overlay">
+            <div class="position-absolute top-50 start-50 translate-middle ">
+                <div class="card opaque-card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="Yoga picture">
+                    <form>
+                    <div class="card-body ">
+                      <h5 class="card-title">Yoga Pose</h5>
+                      <p class="card-text">pose description</p>
+                      <a href="#" class="btn btn-light">favorite this pose</a>
+                    </div>
+                    </form>
+                  </div>
+            </div> 
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock %}

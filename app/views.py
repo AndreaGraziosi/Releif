@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template
+from flask import Flask, request, render_template 
 
 #creatre a root... a decorator in parentheseis we put url we want to fire
 #write a funcution underneath it and tell it to do something
@@ -10,7 +10,17 @@ from flask import render_template
 def index():
     return render_template("/index.html")
 
-@app.route("/enter_problem")
+@app.route("/enter_problem", methods=['POST'])
 def enter_problem():
-    return render_template("/enter_problem.html")
+    ailment = request.form.get("name")
+    if not ailment:
+        return "Please enter an ailment"
+    return render_template("/display_pose.html")
+
+@app.route("/display_pose", methods=['POST'])
+def display_pose():
+   
+    #capture value entered in enter problem
+    # retrieve from the database
+    return render_template("/display_pose.html")
 

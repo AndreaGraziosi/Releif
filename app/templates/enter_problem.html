@@ -1,14 +1,24 @@
 {% extends "/base.html" %}
 
-{% block title%} Home {% endblock %}
+{% block title%} Find a pose {% endblock %}
 
 {% block main %}
-<div class="cotainer">
+<div class="container">
     <div class="row">
-        <div class="col">
-            <h1>type in your pain</h1>
+    <div class="card bg-light text-dark border-0">
+        <img src="./static/img/background.jpg" class="card-img" alt="Lake and Mountains">
+        <div class="card-img-overlay">
+            <div class="position-absolute top-50 start-50 translate-middle ">
+                    <h5 class="card-title">What ailment are you wanting to treat?</h5>
+                     <p class="card-text mt-3">Find a pose to assist in the treatement of various ailments such as back pain, muscle stiffness, anxiety, weakeness, menstrual cramps to name a few.</p>
+                     <p class="card-text">Please enter an ailment:</p>
+                     <form class="d-flex" action="/enter_problem" method="POST">
+                        <input class="form-control me-2 fw-lighter" type="text" name="name" placeholder="pain in the knee" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Find a pose</button>
+                      </form>
+            </div> 
         </div>
     </div>
+    </div>
 </div>
-
 {% endblock %}
