@@ -1,28 +1,33 @@
 {% extends "/base.html" %}
 
-{% block title%} Display my pose {% endblock %}
+{% block title%} Enter Pose Info {% endblock %}
 
 {% block main %}
-<form>
-<div class="mb-3">
-    <label for="formGroupExampleInput" class="form-label">Pose Name</label>
-    <input type="text" name="name" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-  </div>
-  <div class="mb-3">
-    <label for="formGroupExampleInput2" class="form-label">Key ailments this pose relieves</label>
-    <input type="text" name="ailment" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Special instructions</label>
-    <textarea name="special_instructions" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-  <div>
-    <label for="formFileLg" class="form-label">upload a picture</label>
-    <input name ="pose_image" class="form-control form-control-lg" id="formFileLg" type="file">
-  </div>
-  <button class="btn btn-outline-warning" type="submit">Save to database</button>
-</form>
 
-
+<div class="container">
+  <div class="row">
+      <form>
+          <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label">Pose Name</label>
+              <input type="text" name="name" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label">Pose helps aleviate:</label>
+              <input type="text" name="ailment" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Special Instructions</label>
+              <textarea name="special_instructions" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div>
+              <label for="formFileLg" class="form-label">Upload Image</label>
+              <input name ="pose_image" class="form-control form-control-lg" id="formFileLg" type="file">
+            </div>
+            <div class=" mt-3 ml auto">
+              <button class="btn btn-outline-warning" type="submit">Save to database</button>
+            </div>
+      </form>
+  </div>
+</div>
 
 {% endblock %}
