@@ -13,8 +13,11 @@
                     <img src="..." class="card-img-top" alt="Yoga picture">
                     <form>
                     <div class="card-body ">
-                      <h5 class="card-title">Yoga Pose</h5>
-                      <p class="card-text">pose description</p>
+                        {% if pose_cure != "" %}
+                      <h5 class="card-title" name="pose_name">{{pose_name}}</h5>
+                        
+                      <p class="card-text" name="pose_cure">{{pose_cure}}</p>
+                      {% endif %}
                       <a href="#" class="btn btn-light">favorite this pose</a>
                     </div>
                     </form>
