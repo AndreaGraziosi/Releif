@@ -11,30 +11,45 @@ import csv
 def index():
     return render_template("/index.html")
 
+my_yoga_pose = {
+        'Menstrual Pain':'Paschimottanasana',
+        'Low Back Pain':'Supta-Padangusthasana',
+        'Eyes': 'Sarvangasana',
+        'Flat Foot': 'Mulabandhasana',
+        'Knees': 'Virasana',
+        'Insomnia': 'Uttanasana'
+    }
+
+my_yoga_pictures = {
+        'Menstrual Pain':'./static/img/Paschimotanasana.png',
+        'Low Back Pain':'./static/img/SuptaP.png',
+        'Eyes': './static/img/Sarvangasana.png',
+        'Flat Foot': './static/img/Mulabandhasana.png',
+        'Knees': './static/img/Virasana.png',
+        'Insomnia': './static/img/uttanasana.jpg'
+
+}    
+
 @app.route("/enter_problem", methods=['GET'])
 def enter_problem():
-    return render_template("/enter_problem.html")
 
-@app.route("/display_pose", methods=['POST'])
+    context = {
+    'pose_names':my_yoga_pose.keys(),
+        }
+    return render_template("/enter_problem.html", **context)
+
+@app.route("/display_pose", methods=['GET'])
 def display_pose():
     
-    with open('poses.csv', newline='') as myFile:
-        reader = csv.reader(myFile)
-        for row in reader:
-            print(row)
-    myFile.close()
-    
-    return render_template("/display_pose.html")
+    chosen_ailment = request.args.get('pose')
 
-
-my_yoga_pose = {
-        'Menstrual Pain':'Supta-Virasana, Supta-Baddha-Konasana, Paschimottanasana',
-        'Low Back Pain':'Supta-Padangusthasana, Adhomukha-Svanasana, Ustrasana',
-        'Eyes': 'Sirsasana, Sarvangasana, Uttanasana',
-        'Flat foot': 'Virasana, Mulabandhasana, Paschimotanasana',
-        'knees': 'Gomukhasana, Virasana, Janu-Sirsasana',
-        'Insomnia': 'Uttanasana, Paschimottanasana'
+    context = {
+    'pose_names':my_yoga_pose.keys(),
+    'pose_cure':my_yoga_pose.get(chosen_ailment, ""),
+    'pose_image':my_yoga_pictures.get(chosen_ailment, "")
     }
+    
+    return render_template("/display_pose.html", **context, chosen_ailment=chosen_ailment)
 
 
 @app.route("/enter_poses", methods=['GET'])
@@ -52,14 +67,9 @@ def enter_poses():
             writer = csv.DictWriter(inFile, fieldnames=fieldnames)
             writer.writerow({'name': name, 'ailment': ailment, 'special_instructions':special_instructions, 'pose_image':pose_image})'''
     
-        chosen_ailment = request.args.get('name')
+        
 
-        context = {
-           'pose_names':my_yoga_pose.keys(),
-           'pose_cure':my_yoga_pose.get(chosen_ailment, "")
-        }
-
-        return render_template("/enter_poses.html", **context)
+        return render_template("/enter_poses.html")
 
 @app.route("/login")
 def login():

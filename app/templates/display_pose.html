@@ -10,13 +10,15 @@
         <div class="card-img-overlay">
             <div class="position-absolute top-50 start-50 translate-middle ">
                 <div class="card opaque-card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="Yoga picture">
+                    <img src="{{ pose_image }}" class="card-img-top" alt="{{chosen_ailment}}">
                     <form>
                     <div class="card-body ">
-                        {% if pose_cure != "" %}
-                      <h5 class="card-title" name="pose_name">{{pose_name}}</h5>
+                         
+                      <p class="card-text">Problems with: <strong>{{chosen_ailment}}</strong></p>
                         
-                      <p class="card-text" name="pose_cure">{{pose_cure}}</p>
+
+                        {% if pose_cure != "" %}  
+                      <p class="card-text">Practice: <strong>{{pose_cure}}</strong></p>
                       {% endif %}
                       <a href="#" class="btn btn-light">favorite this pose</a>
                     </div>
