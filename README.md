@@ -5,7 +5,7 @@ A search engine for yogis, it helps yoga practitioners find poses to assist in t
 ```
 
 
-![Image](./static/img/Backbends.png)
+![Image](./app/static/img/Backbends.png)
 
 #### Tech Stack
 
