@@ -3,22 +3,90 @@
 {% block title%} Home {% endblock %}
 
 {% block main %}
-<div class="cotainer">
-    <div class="row">
-        <div class="card mb-3">
-            <img src="./static/img/feet.jpg" class="card-img-top" alt="feet">
-            <div class="card-img-overlay">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text">Last updated 3 mins ago</p>
-              </div>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+
+ <div class="cotainer"> 
+    
+  <div class="row row-cols-md-3 g-4 justify-content-center " style="padding-left:5rem; padding-right:5rem;">
+        
+        {% for key, value in names.items() %}
+        
+        <div class="col " style="max-width: 40rem;">
+          <div class="card" style="height: 450px; width: 400px;">
+            <img src="{{value}}" class="card-img-top" alt="{{key}}" style="height: 300px; width: 350px;">
+            <div class="card-body m-3">
+              
+              
+              <form  action="/sequence" method="GET">
+                
+                <input class="card-title border-0" name="name" value="{{key}}"></input>
+                <button class="btn rounded-pill button-color" type="submit">Show Sequence</button>
+                
+            </form>
             </div>
           </div>
-    </div>
-</div>
+        </div>
+        
+        {% endfor %}
+       
+      </div>
+ </div> 
+
+
+
+
+
+
+
+        <!-- <div class="col">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a short card.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+          </div>
+          </div>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4 m-3">
+        <div class="col">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a short card.</p>
+            </div>
+          </div>
+        </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+         </div> 
+    </div> 
+</div> -->
 
 {% endblock %}

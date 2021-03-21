@@ -1,0 +1,27 @@
+{% extends "/base.html" %}
+
+{% block title%} Enter Pose Info {% endblock %}
+
+{% block main %}
+
+<div class="container">
+   
+    <div class="row justify-content-center">
+        
+        {% for key, value in sequence.items() %}
+        <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+            <!-- <img src="{{img}}" class="card-img-top" alt="..."> -->
+            
+            <div class="card-header">{{ key }}</div>
+            <div class="card-body">
+              <h5 class="card-title">{{value}}</h5>
+              
+            </div>
+          </div>
+          {% endfor %}
+    </div>
+  
+</div>
+
+
+{% endblock%}

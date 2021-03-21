@@ -7,9 +7,7 @@ import csv
 # environment variables: run flask app... declare: $export FLASK_APP=run.py
 # $export FLASK_ENV=development
 #$flask run
-@app.route("/")
-def index():
-    return render_template("/index.html")
+
 
 my_yoga_pose = {
         'Menstrual Pain':'Paschimottanasana',
@@ -30,12 +28,48 @@ my_yoga_pictures = {
 
 }    
 
+my_yoga_sequences = {
+    'Back-Bend':'./static/img/Backbends.png',
+    'Forward-Bend': './static/img/ForwardBends.png',
+    'Twist':'./static/img/twist.png',
+    'Standing-Poses':'./static/img/StandingPoses.png',
+    'Sitting-Poses':'./static/img/sittingPoses.png',
+    'Inversions':'./static/img/Inversion.png'
+
+}
+sequence_poses = {
+    'Back-Bend':'Backbend sequence using a chair',
+    'Forward-Bend':'',
+    'Twist':'',
+    'Standing-Poses':'',
+    'Sitting-Poses':'',
+    'Inversions':''
+}
+
+@app.route("/")
+def index():
+    names = my_yoga_sequences
+    return render_template("/index.html",  names=names)
+
+@app.route("/sequence")
+def sequence():
+    chosen_theme = request.args.get('name')
+    
+    sequence = sequence_poses
+    context = {
+        'sequence_category':my_yoga_sequences.keys(),
+        'sequence_poses':sequence_poses.values()
+
+    }
+    return render_template('/sequence.html', chosen_theme=chosen_theme, **context, sequence=sequence)
+
+
 @app.route("/enter_problem", methods=['GET'])
 def enter_problem():
 
     context = {
     'pose_names':my_yoga_pose.keys(),
-        }
+    }
     return render_template("/enter_problem.html", **context)
 
 @app.route("/display_pose", methods=['GET'])

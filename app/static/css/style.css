@@ -1,7 +1,13 @@
 body {
     background-color: #f1f1f1;
+    background-image: linear-gradient(#f5e3e6,#d9e4f5
+    );
 }
 
 .opaque-card {
     opacity: .8;
+}
+
+.button-color {
+    background-image: linear-gradient(#f5e3e6,#d9e4f5);
 }
