@@ -17,10 +17,10 @@
             <div class="card-body m-3">
               
               
-              <form  action="/sequence" method="GET">
+              <form  action="/sequence" method="GET, POST">
                 
-                <input class="card-title border-0" name="name" value="{{key}}"></input>
-                <button class="btn rounded-pill button-color" type="submit">Show Sequence</button>
+                <h5 class="card-title">{{ key }}</h5>
+                <button class="btn rounded-pill button-color" name="name" value="{{key}} type="submit">Show Sequence</button>
                 
             </form>
             </div>

@@ -38,7 +38,7 @@ my_yoga_sequences = {
 
 }
 sequence_poses = {
-    'Back-Bend':'Backbend sequence using a chair',
+    'Back-Bend': "./static/img/bb1.png",#'./static/img/bb2.png,' './static/img/bb3.png]',
     'Forward-Bend':'',
     'Twist':'',
     'Standing-Poses':'',
@@ -51,17 +51,19 @@ def index():
     names = my_yoga_sequences
     return render_template("/index.html",  names=names)
 
-@app.route("/sequence")
+@app.route("/sequence", methods=["GET", "POST"])
 def sequence():
-    chosen_theme = request.args.get('name')
+    request.form.get("name")
     
-    sequence = sequence_poses
+    sequence = sequence_poses['Back-Bend'] 
+    print('------------')
+    print(sequence)     
     context = {
-        'sequence_category':my_yoga_sequences.keys(),
-        'sequence_poses':sequence_poses.values()
+    'sequence_category':my_yoga_sequences.keys(),
+    'sequence_poses':sequence_poses.values()
 
     }
-    return render_template('/sequence.html', chosen_theme=chosen_theme, **context, sequence=sequence)
+    return render_template('/sequence.html', **context, sequence=sequence)
 
 
 @app.route("/enter_problem", methods=['GET'])
