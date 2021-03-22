@@ -38,12 +38,12 @@ my_yoga_sequences = {
 
 }
 sequence_poses = {
-    'Back-Bend': "./static/img/bb1.png",#'./static/img/bb2.png,' './static/img/bb3.png]',
-    'Forward-Bend':'',
-    'Twist':'',
-    'Standing-Poses':'',
-    'Sitting-Poses':'',
-    'Inversions':''
+    'Back-Bend': ['./static/img/bb1.png','./static/img/bb2.png', './static/img/bb3.png'],
+    'Forward-Bend':['./static/img/ff1.png', './static/img/ff2.png', './static/img/ff3.png'],
+    'Twist':['./static/img/tw1.png','./static/img/tw2.png','./static/img/tw3.png'],
+    'Standing-Poses':['./static/img/s1.png','./static/img/s2.png','./static/img/s3.png'],
+    'Sitting-Poses':['./static/img/sp1.png', './static/img/sp2.png','./static/img/sp3.png'],
+    'Inversions':['./static/img/i1.png','./static/img/i2.png','./static/img/i3.png']
 }
 
 @app.route("/")
@@ -53,14 +53,13 @@ def index():
 
 @app.route("/sequence", methods=["GET", "POST"])
 def sequence():
-    request.form.get("name")
+    pose = request.args.get("name")
     
-    sequence = sequence_poses['Back-Bend'] 
-    print('------------')
-    print(sequence)     
+    sequence = sequence_poses[pose] 
+        
     context = {
     'sequence_category':my_yoga_sequences.keys(),
-    'sequence_poses':sequence_poses.values()
+    'sequence_poses':sequence_poses
 
     }
     return render_template('/sequence.html', **context, sequence=sequence)

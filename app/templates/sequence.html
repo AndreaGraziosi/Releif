@@ -8,14 +8,14 @@
    
     <div class="row justify-content-center">
         
-        {% for key, value in sequence.items() %}
+        {% for img in sequence %}
         <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
           
-          <img src="{{ value}}" class="card-img-top" alt="...">
+          <img src="{{ img }}" class="card-img-top" alt="...">
             
             
             <div class="card-body">
-              <h5 class="card-title">{{ key }}</h5>
+              <h5 class="card-title"></h5>
               
             </div>
           </div>
