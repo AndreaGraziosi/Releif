@@ -14,7 +14,7 @@ A search engine for yogis, it helps yoga practitioners find poses to assist in t
 > Jinja2
 > HTML CSS JS
 
-
+Check out the site [here](https://techonyoga.herokuapp.com/)
 
 
 **To run the code**, navigate to the project folder [courses/BEW1-2/Spring_2021]and run the following to install the required packages:
