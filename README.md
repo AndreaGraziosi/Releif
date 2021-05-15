@@ -1,7 +1,7 @@
 ## Tech on YOGA 
 
 ```
-A search engine for yogis, it helps yoga practitioners find poses to assist in the treatment of various ailments.
+A search engine for yogis, this API helps yoga practitioners find poses to assist in the treatment of various ailments.
 ```
 
 
