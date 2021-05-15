@@ -106,6 +106,6 @@ def enter_poses():
 
         return render_template("/enter_poses.html")
 
-@app.route("/login")
+@app.route("/login", methods=['GET'])
 def login():
     return render_template("/login.html")
