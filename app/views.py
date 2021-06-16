@@ -85,27 +85,4 @@ def display_pose():
     }
     
     return render_template("/display_pose.html", **context, chosen_ailment=chosen_ailment)
-
-
-@app.route("/enter_poses", methods=['GET'])
-def enter_poses():
-# This is to make sure the HTTP method is 
-# POST and not any other
-        '''if request.method == 'GET':
-        name =  request.args.get('name')
-        ailment = request.args.get('ailment')
-        special_instructions = request.args.get('special_instructions')
-        pose_image = request.args.get('pose_image')
-        fieldnames = [name, ailment, special_instructions, pose_image]
-        # TODO: enter name of your CSV file below
-        with open('poses.csv','w') as inFile:
-            writer = csv.DictWriter(inFile, fieldnames=fieldnames)
-            writer.writerow({'name': name, 'ailment': ailment, 'special_instructions':special_instructions, 'pose_image':pose_image})'''
     
-        
-
-        return render_template("/enter_poses.html")
-
-@app.route("/login", methods=['GET'])
-def login():
-    return render_template("/login.html")

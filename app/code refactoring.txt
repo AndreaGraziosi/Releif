@@ -1,0 +1,29 @@
+*** R E F A C T O R I N G  *** P L A N ***
+
+**** FIX UI/UX!!!!!
+
+- ***Removing all unused code
+delete unused and unfinished code (for example, files containing CSV information that was not used, HTML templates not being used, etc..)
+
+- ***Getting to know the program by running the features and adding comments to the code\
+----comment the code
+
+- ***Write tests for existing methods, so that all functions pass
+--- figure out how to do this. so that program does not crash
+
+- ***No new features 
+although I wanted to add a user and database component so that users could save favorite sequences and create new sequences by adding poses and pictures. this can be developed after the refactoring is done.
+
+- ***Improve naming 
+make sure the plural form and singular form of the variables are being used correctly
+
+- ***Improve documentation
+document the changes and explain what each class does, what methods can be called for. 
+
+-*** Implement code classes
+-------instead of having dictionaries and a bunch of separate methods to extracting information from those JSON or dictionary items,  I could make a class called Sequences with attributes: poses, ailments the pose helps with, and sequence title.
+The methods in this class would be getPoses(), returns Poses; GetSequences(): returns Sequences:  getAilments():returns ailments affecting a body
+the next class could be get Class Poses:
+here attributes could be: Pose name, pose instructions, and pose picture
+Methods(): getPose():, returns a pose name; get pictures: returns pose pictures: getInstructions() returns instructions
+

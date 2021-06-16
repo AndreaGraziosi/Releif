@@ -15,14 +15,19 @@
                 
                 
                 <form class="d-flex opaque-card" action="/display_pose" method="GET">
-
-                    <select name="pose" class="form-select form-select-lg m-3" aria-label=".form-select-lg example">
-                        {% for pose in pose_names %}
-                        <option value="{{ pose }}">{{ pose }}</option>
-                        {% endfor %}
-                    </select>
-                    <button class="btn btn-outline-light rounded-pill" type="submit">Find a pose</button>
-                        
+                    <div class="row">
+                        <div>
+                        <select name="pose" class="form-select form-select-lg m-3" aria-label=".form-select-lg example">
+                            {% for pose in pose_names %}
+                            <option value="{{ pose }}">{{ pose }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div>
+                        <button class="btn btn-outline-light" type="submit">Find a pose</button>
+                    </div> 
+                </div>
+                  
                 </form>
             </div> 
         </div>
